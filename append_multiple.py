@@ -8,7 +8,16 @@ def id_generator(size: int = 10) -> str:
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
 
 
-print('Enter the installation directory of Weka')
+print('------Program to append multiple .arff files using Weka------')
+
+sys.argv.pop(0)
+if len(sys.argv) < 3:
+    raise ValueError('Cannot append less than 2 files.\n'
+                     'Syntax: python append_multiple.py '
+                     'file1.arff file2.arff file3.arff '
+                     'outputfile.arff')
+
+print('Enter the path to installation directory of Weka or weka.jar')
 print('Example: C:\\Program Files\\Weka-3-8-5')
 print('Leave empty and press Enter if the program is in the installation directory')
 installation_dir: str = input('Path: ').strip()
@@ -33,12 +42,6 @@ if not output_dir == '':
 else:
     output_dir = files_dir
 
-sys.argv.pop(0)
-if len(sys.argv) < 3:
-    raise ValueError('Cannot append less than 2 files.\n'
-                     'Syntax: python append_multiple.py '
-                     'file1.arff file2.arff file3.arff '
-                     'outputfile.arff')
 files: list[str] = [files_dir + file_name for file_name in sys.argv]
 if files_dir != output_dir:
     files[-1] = files[-1].replace(files_dir, output_dir)
