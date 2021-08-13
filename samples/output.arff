@@ -1,0 +1,13 @@
+@relation 1
+
+@attribute weather {sunny,winter}
+@attribute temp numeric
+@attribute windy {yes,no}
+@attribute sports {dontplay,play}
+
+@data
+
+sunny,27,yes,dontplay
+winter,13,no,play
+sunny,21,no,play
+winter,15,yes,dontplay
