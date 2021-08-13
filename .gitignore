@@ -1,3 +1,7 @@
 /.idea
 *.iml
+/output
 *.txt
+*.json
+*.exe
+*.bat
