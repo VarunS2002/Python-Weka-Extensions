@@ -12,8 +12,15 @@ print('------Program to append multiple .arff files using Weka------')
 
 sys.argv.pop(0)
 if len(sys.argv) < 3:
+    file_extension: str = 'py'
+    try:
+        # noinspection PyUnresolvedReferences,PyProtectedMember
+        base_path: str = sys._MEIPASS
+        file_extension = 'exe'
+    except AttributeError:
+        pass
     raise ValueError('Cannot append less than 2 files.\n'
-                     'Syntax: python append_multiple.py '
+                     f'Syntax: {"python " if file_extension == "py" else ""}append_multiple.{file_extension} '
                      'file1.arff file2.arff file3.arff '
                      'outputfile.arff')
 
