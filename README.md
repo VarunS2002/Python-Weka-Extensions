@@ -8,7 +8,7 @@ Programs to improve some features in Weka.
 
 ## Requirements:
 
-- Install [Weka](https://waikato.github.io/weka-wiki/downloading_weka/) or download `weka.jar`
+- Install Weka or download `weka.jar` from https://waikato.github.io/weka-wiki/downloading_weka/
 
 ## 1. append_multiple.py
 
@@ -45,6 +45,8 @@ Programs to improve some features in Weka.
     - Syntax: `python append_multiple.py 1.arff 2.arff 3.arff 4.arff outputfile.arff`
 
     - Use only the filenames of the `.arff` files without the path
+
+    - Wrap filename in double quotes if it contains spaces
 
     - Follow the on screen instructions
 
